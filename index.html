@@ -9,8 +9,7 @@
     <style>
         body {
             background-image: url(back.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
+
 
 
 
@@ -338,16 +337,24 @@
     }
 
 
-    //console.log(Math.cos())
+
     function calculate() {
-        try {
-            result_screen.value = eval(total.join(''));
+        let calculation = (total.join(''));
+        console.log(calculation)
+        if (calculation != '') {
+            try {
 
-            console.log(total.join(''));
+                if ((eval(calculation)) ? result_screen.value = eval(calculation) : result_screen.value = "ERROR");
 
+                // console.log(total.join(" "));
+
+            }
+            catch (err) {
+                result_screen.value = 'ERROR';
+            }
         }
-        catch (err) {
-            result_screen.value = 'ERROR';
+        else {
+            result_screen.value = '';
         }
     }
 
@@ -386,10 +393,8 @@
         }
 
     }
-    let arr = ['3', '5'];
+    
 
-    arr.push(3);
-    console.log("tfdxs", arr.join(''))
 
 </script>
 
