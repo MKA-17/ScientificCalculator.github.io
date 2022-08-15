@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <style>
+        body {
+            background-image: url(back.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow: hidden;
+
+        }
+
+        #Contain {
+           
+
+
+        }
+
+        .screen {
+            
+            background-color: aliceblue;
+            border-color: aliceblue;
+            width: 355px;
+            height: 40px;
+        }
+
+        p {
+            color: bisque;
+
+
+            font-size: 20px;
+
+        }
+
+
+
+        input:hover {
+            color: red;
+        }
+
+        input {
+            color: black;
+            cursor: pointer;
+            font-size: 25px;
+            /*width: 90px;
+            height: 90px;*/
+
+            border: 2px solid white;
+        }
+
+        h1 {
+            color: bisque;
+
+
+        }
+
+        table {
+
+
+            font-size: larger;
+            background-color: aliceblue;
+            border: 2px black;
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .number {}
+    </style>
+</head>
+
+<body>
+    <h1>SCIENTIFIC CALCULATOR</h1>
+    <br>
+
+    <div class="container" id="contain">
+
+
+
+        <br>
+        
+
+        <table>
+            <tr>
+                <input type="text" class="screen" id="disp">
+
+
+            </tr>
+            <tr>
+
+              
+                <input type="text" class="screen" id="result">
+
+
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="number" value="C" onclick="CLR()">
+                </td>
+                <td>
+                    <input type="button" class="number" value="(" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value=")" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="E" onclick="erase()">
+                </td>
+                <td>
+                    <input type="button" class="number" value="sin(" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="asin(" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="√(" onclick="button_value(this)">
+                </td>
+
+
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="number" value="1" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="2" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="3" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="+" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="cos(" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="acos(" onclick="button_value(this)">
+                </td>
+
+                <td>
+                    <input type="button" class="number" value="3√(" onclick="button_value(this)">
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="number" value="4" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="5" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="6" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="-" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="tan(" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="atan(" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="f(" onclick="button_value(this)">
+                </td>
+
+
+
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="number" value="7" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="8" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="9" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="*" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="X^n" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="X^2" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="ln(" onclick="button_value(this)">
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="number" value="0" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="." onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="%" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="/" onclick="button_value(this)">
+                </td>
+
+                <td>
+                    <input type="button" class="number" value="π" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="e" onclick="button_value(this)">
+                </td>
+                <td>
+                    <input type="button" class="number" value="=" onclick="calculate()">
+                </td>
+
+            </tr>
+        </table>
+
+    </div>
+
+    <pre
+        style="color: bisque; font-size: larger;">Made by <b>MKA-17</b>. Source code: <a href="https://github.com/MKA-17/Scientific_calculator.github.io" style="color: yellow;">Clickhere.</a></pre>
+
+</body>
+<script>
+    let screen = document.getElementById("disp");
+    let result_screen = document.getElementById("result");
+
+    let sec_val = [];
+    let total = [];
+
+    function button_value(e)// this e parameter gets that element by using the this keyword
+    {
+        if (e.value == "sin(") {
+            total.push("Math.sin( Math.PI / 180*");
+            sec_val.push(e.value);
+        }
+        else if (e.value == "cos(") {
+            total.push("Math.cos( Math.PI / 180*");
+            sec_val.push(e.value);
+        }
+        else if (e.value == "tan(") {
+            total.push("Math.tan( Math.PI / 180*");
+            sec_val.push(e.value);
+        }
+        else if (e.value == "asin(") {
+            total.push("180/Math.PI*Math.asin(");
+            sec_val.push(e.value);
+        }
+        else if (e.value == "acos(") {
+            total.push("180/Math.PI*Math.acos(");
+            sec_val.push(e.value);
+        }
+        else if (e.value == "atan(") {
+            total.push("180/Math.PI*Math.atan(");
+            sec_val.push("atan(");
+        }
+        else if (e.value == "e") {
+            total.push("Math.E");
+            sec_val.push(e.value);
+        }
+        else if (e.value == "X^n") {
+            total.push('**');
+            sec_val.push('^');
+
+        }
+        else if (e.value == "π") {
+            total.push('Math.PI');
+            sec_val.push('π');
+
+
+        }
+        else if (e.value == "√(") {
+            total.push('Math.sqrt(');
+            sec_val.push('√(');
+
+
+        }
+        else if (e.value == "ln(") {
+            total.push('Math.log(');
+            sec_val.push('ln(');
+
+
+        }
+        else if (e.value == "3√(") {
+            total.push('Math.cbrt(');
+            sec_val.push('3√(');
+
+
+        }
+        else if (e.value == "f(") {
+            total.push(' factorial(');
+            sec_val.push('f(');
+
+
+        }
+        else if (e.value == "X^2") {
+            total.push('**2');
+            sec_val.push('^2');
+
+
+        }
+        else {
+            total.push(e.value);
+            sec_val.push(e.value);
+        }
+        console.log("Ans: ", total);
+        screen.value = sec_val.join('');
+        console.log("Screen value: ", sec_val);
+
+    }
+
+
+    //console.log(Math.cos())
+    function calculate() {
+        try {
+            result_screen.value = eval(total.join(''));
+
+            console.log(total.join(''));
+
+        }
+        catch (err) {
+            result_screen.value = 'ERROR';
+        }
+    }
+
+    function erase() {
+        sec_val.pop();
+        (screen.value) = sec_val.join('');
+        total.pop();
+        //total = total;
+        console.log("Ans: ", total);
+        console.log("Screen value: ", sec_val);
+
+
+
+
+    }
+    function CLR() {
+
+        sec_val = [];
+        result_screen.value = screen.value = sec_val;
+        total = [];
+        console.log("Ans: ", total);
+        console.log("Screen value: ", sec_val);
+
+
+
+    }
+    function factorial(n) {
+        let answer = 1;
+        if (n == 0 || n == 1) {
+            return answer;
+        } else {
+            for (var i = n; i >= 1; i--) {
+                answer = answer * i;
+            }
+            return answer;
+        }
+
+    }
+    let arr = ['3', '5'];
+
+    arr.push(3);
+    console.log("tfdxs", arr.join(''))
+//console.log(eval())
+</script>
+
+</html>
