@@ -340,11 +340,11 @@
 
     function calculate() {
         let calculation = (total.join(''));
-        console.log(calculation)
+        
         if (calculation != '') {
             try {
 
-                if ((eval(calculation)) ? result_screen.value = eval(calculation) : result_screen.value = "ERROR");
+                result_screen.value = eval(calculation)
 
                 // console.log(total.join(" "));
 
@@ -393,7 +393,7 @@
         }
 
     }
-    
+    console.log(Math.log(1))
 
 
 </script>
