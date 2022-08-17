@@ -343,8 +343,9 @@
         
         if (calculation != '') {
             try {
-
-                result_screen.value = eval(calculation)
+                console.log(!isNaN(eval(calculation)) )
+                if(!isNaN(eval(calculation)) ? result_screen.value = eval(calculation) : result_screen.value = "ERROR");
+                
 
                 // console.log(total.join(" "));
 
@@ -393,7 +394,7 @@
         }
 
     }
-    console.log(Math.log(1))
+    
 
 
 </script>
